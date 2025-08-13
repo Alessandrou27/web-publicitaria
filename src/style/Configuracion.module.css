@@ -1,0 +1,248 @@
+.configContainer {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.configCard {
+  background-color: var(--color-bg);
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+}
+
+.configTitle {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  color: var(--color-text);
+}
+
+.configSection {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--color-table-border);
+}
+
+.configSection:last-child {
+  border-bottom: none;
+}
+
+.configSection h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+  color: var(--color-text);
+}
+
+/* Theme Toggle */
+.themeToggleContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--color-table-header);
+  border-radius: 12px;
+}
+
+.themeInfo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.themeIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.themeDetails h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+}
+
+.themeDetails p {
+  color: var(--color-text);
+  opacity: 0.8;
+}
+
+.themeToggleButton {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.themeToggleButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Notification Preferences */
+.notificationPrefs {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.notificationOption {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: var(--color-table-header);
+  border-radius: 12px;
+}
+
+.optionDetails h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+}
+
+.optionDetails p {
+  color: var(--color-text);
+  opacity: 0.8;
+  font-size: 0.9rem;
+}
+
+/* Switch Toggle */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* System Info */
+.systemInfo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.infoItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: var(--color-table-header);
+  border-radius: 12px;
+}
+
+.infoItem i {
+  font-size: 1.5rem;
+  color: var(--color-primary);
+}
+
+.infoItem h4 {
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.infoItem p {
+  font-size: 0.9rem;
+  color: var(--color-text);
+  opacity: 0.8;
+}
+
+.statusOnline {
+  color: var(--color-success) !important;
+  opacity: 1 !important;
+  font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .configContainer {
+    padding: 1rem;
+  }
+  
+  .configCard {
+    padding: 1.5rem;
+  }
+  
+  .themeToggleContainer {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  
+  .themeToggleButton {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .systemInfo {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .configTitle {
+    font-size: 1.5rem;
+  }
+  
+  .configSection {
+    padding: 1rem 0;
+  }
+  
+  .notificationOption {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+  
+  .switch {
+    margin-bottom: 0.5rem;
+  }
+}
