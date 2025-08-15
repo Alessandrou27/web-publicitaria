@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Landing from '../pages/Landing';
 import Login from '../pages/Login';
+import Register from '../pages/Register';
 import AdminLayout from '../layouts/AdminLayout';
 import ProtectedRoute from '../components/ProtectedRoute';
 
@@ -15,6 +16,9 @@ const AppRouter = () => {
         
         {/* Ruta de login */}
         <Route path="/login" element={<Login />} />
+        
+        {/* Ruta de registro */}
+        <Route path="/register" element={<Register />} />
         
         {/* Rutas protegidas del admin */}
         <Route 
