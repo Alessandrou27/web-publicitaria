@@ -1,0 +1,303 @@
+.profileContainer {
+  max-width: 700px;
+  margin: 2rem auto;
+  background: var(--color-bg);
+  color: var(--color-text);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.profileHeader {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 0 auto 1rem;
+  overflow: hidden;
+  border: 3px solid var(--color-primary);
+  background: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: white;
+  position: relative;
+}
+
+.profileImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profileName {
+  margin: 0;
+  color: var(--color-text);
+}
+
+.profileRole {
+  color: var(--color-primary);
+  margin: 0.5rem 0;
+}
+
+.section {
+  margin-bottom: 1.5rem;
+}
+
+.sectionTitle {
+  margin-bottom: 1rem;
+  color: var(--color-primary);
+  border-bottom: 2px solid var(--color-border);
+  padding-bottom: 0.5rem;
+}
+
+/* Estilos para la carga de imagen */
+.imageUploadContainer {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.imagePreview {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin: 0 auto 1rem;
+  overflow: hidden;
+  border: 3px solid var(--color-primary);
+  background: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.previewImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.placeholderImage {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  color: white;
+}
+
+.imageControls {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.fileInput {
+  display: none;
+}
+
+.uploadButton {
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+}
+
+.uploadButton:hover {
+  background: var(--color-primary-dark);
+  transform: translateY(-1px);
+}
+
+.removeButton {
+  background: var(--color-error);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+}
+
+.removeButton:hover {
+  background: var(--color-error-dark);
+  transform: translateY(-1px);
+}
+
+.imageHelp {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+  margin: 0;
+  font-style: italic;
+}
+
+.formGroup {
+  margin-bottom: 1rem;
+}
+
+.label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: var(--color-text);
+}
+
+.input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: 5px;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(var(--color-primary-rgb), 0.2);
+}
+
+.input:invalid {
+  border-color: var(--color-error);
+}
+
+.input:valid {
+  border-color: var(--color-success);
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.primaryButton {
+  padding: 0.75rem 1.5rem;
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s;
+}
+
+.primaryButton:hover {
+  background: var(--color-primary-dark);
+}
+
+.primaryButton:disabled {
+  background: var(--color-disabled);
+  cursor: not-allowed;
+}
+
+.secondaryButton {
+  padding: 0.75rem 1.5rem;
+  background: var(--color-secondary);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s;
+}
+
+.secondaryButton:hover {
+  background: var(--color-secondary-dark);
+}
+
+.editButton {
+  padding: 0.75rem 1.5rem;
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s;
+}
+
+.editButton:hover {
+  background: var(--color-primary-dark);
+}
+
+.infoRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.infoLabel {
+  font-weight: bold;
+  color: var(--color-text);
+}
+
+.infoValue {
+  color: var(--color-text-secondary);
+}
+
+.permissionsList {
+  list-style: none;
+  padding: 0;
+}
+
+.permissionsList li {
+  padding: 0.25rem 0;
+  color: var(--color-text);
+}
+
+.permissionsList li:before {
+  content: "•";
+  color: var(--color-primary);
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+@media (max-width: 768px) {
+  .profileContainer {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+  
+  .imageControls {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .uploadButton,
+  .removeButton {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .buttonGroup {
+    flex-direction: column;
+  }
+}

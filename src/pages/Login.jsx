@@ -1,12 +1,12 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import toast from 'react-hot-toast';
 import styles from '../style/Login.module.css';
 
 const Login = () => {
   const [formData, setFormData] = useState({
-    email: '',
+    username: '',
     password: ''
   });
   const [loading, setLoading] = useState(false);
@@ -22,7 +22,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     
-    if (!formData.email || !formData.password) {
+    if (!formData.username || !formData.password) {
       toast.error('Por favor completa todos los campos');
       return;
     }
@@ -30,7 +30,7 @@ const Login = () => {
     setLoading(true);
 
     try {
-      const result = await login(formData.email, formData.password);
+      const result = await login(formData.username, formData.password);
       if (result.success) {
         toast.success('Inicio de sesión exitoso');
         navigate('/admin');
@@ -55,16 +55,16 @@ const Login = () => {
         
         <form onSubmit={handleSubmit} className={styles.loginForm}>
           <div className={styles.inputGroup}>
-            <label htmlFor="email" className={styles.label}>
+            <label htmlFor="username" className={styles.label}>
               <i className="fas fa-user"></i>
               Usuario
             </label>
             <input
               type="text"
-              id="email"
-              name="email"
-              placeholder="Ingresa tu usuario"
-              value={formData.email}
+              id="username"
+              name="username"
+              placeholder="Ingresa tu nombre de usuario"
+              value={formData.username}
               onChange={handleChange}
               required
               disabled={loading}
@@ -120,6 +120,10 @@ const Login = () => {
             )}
           </button>
         </form>
+        
+        <div className={styles.registerLink}>
+          <p>¿No tienes cuenta? <Link to="/register">Regístrate aquí</Link></p>
+        </div>
         
         <div className={styles.credentials}>
           <p><strong>Credenciales de prueba:</strong></p>

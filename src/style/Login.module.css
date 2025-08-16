@@ -241,3 +241,47 @@
     border-color: rgba(59, 130, 246, 0.3);
   }
 }
+
+/* Estilos para el enlace de registro */
+.registerLink {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.2);
+  border-radius: 10px;
+}
+
+.registerLink p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--color-text);
+}
+
+.registerLink a {
+  color: #059669;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.registerLink a:hover {
+  color: #047857;
+  text-decoration: underline;
+}
+
+/* Dark mode para el enlace de registro */
+@media (prefers-color-scheme: dark) {
+  .registerLink {
+    background: rgba(34, 197, 94, 0.2);
+    border-color: rgba(34, 197, 94, 0.3);
+  }
+  
+  .registerLink a {
+    color: #10b981;
+  }
+  
+  .registerLink a:hover {
+    color: #059669;
+  }
+}

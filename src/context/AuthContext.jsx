@@ -18,6 +18,9 @@ export const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     const checkAuth = () => {
+      // Inicializar usuarios predeterminados
+      authService.initializeDefaultUsers();
+      
       const token = localStorage.getItem('token');
       const userData = localStorage.getItem('user');
       
@@ -40,9 +43,9 @@ export const AuthProvider = ({ children }) => {
     checkAuth();
   }, []);
 
-  const login = async (email, password) => {
+  const login = async (username, password) => {
     try {
-      const result = await authService.login(email, password);
+      const result = await authService.login(username, password);
       if (result.success) {
         localStorage.setItem('token', result.token);
         localStorage.setItem('user', JSON.stringify(result.user));
@@ -51,6 +54,33 @@ export const AuthProvider = ({ children }) => {
         return { success: true };
       }
       return { success: false, error: 'Credenciales incorrectas' };
+    } catch (error) {
+      return { success: false, error: error.message };
+    }
+  };
+
+  const register = async (username, password, email) => {
+    try {
+      const result = await authService.register(username, password, email);
+      if (result.success) {
+        return { success: true, user: result.user };
+      }
+      return { success: false, error: 'Error al registrar usuario' };
+    } catch (error) {
+      return { success: false, error: error.message };
+    }
+  };
+
+  const updateProfile = async (profileData) => {
+    try {
+      const result = await authService.updateProfile(user.id, profileData);
+      if (result.success) {
+        const updatedUser = { ...user, ...profileData };
+        localStorage.setItem('user', JSON.stringify(updatedUser));
+        setUser(updatedUser);
+        return { success: true };
+      }
+      return { success: false, error: result.error };
     } catch (error) {
       return { success: false, error: error.message };
     }
@@ -68,6 +98,8 @@ export const AuthProvider = ({ children }) => {
     isAuthenticated,
     loading,
     login,
+    register,
+    updateProfile,
     logout
   };
 

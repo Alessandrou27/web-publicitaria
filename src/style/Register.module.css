@@ -1,0 +1,320 @@
+.registerPage {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  padding: 2rem 1rem;
+}
+
+.registerBox {
+  background: var(--color-bg);
+  border-radius: 15px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 600px;
+  color: var(--color-text);
+}
+
+.logoContainer {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.logoIcpna {
+  width: 120px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.logoContainer h1 {
+  color: var(--color-primary);
+  margin: 0 0 0.5rem 0;
+  font-size: 1.8rem;
+}
+
+.logoContainer p {
+  color: var(--color-text-secondary);
+  margin: 0;
+  font-size: 1rem;
+}
+
+.registerForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.sectionHeader {
+  color: var(--color-primary);
+  border-bottom: 2px solid var(--color-border);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+/* Estilos para la carga de imagen */
+.imageUploadContainer {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.imagePreview {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin: 0 auto 1rem;
+  overflow: hidden;
+  border: 3px solid var(--color-primary);
+  background: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.previewImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.placeholderImage {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  color: white;
+}
+
+.imageControls {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.fileInput {
+  display: none;
+}
+
+.uploadButton {
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+}
+
+.uploadButton:hover {
+  background: var(--color-primary-dark);
+  transform: translateY(-1px);
+}
+
+.removeButton {
+  background: var(--color-error);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+}
+
+.removeButton:hover {
+  background: var(--color-error-dark);
+  transform: translateY(-1px);
+}
+
+.imageHelp {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+  margin: 0;
+  font-style: italic;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  color: var(--color-text);
+  font-size: 0.9rem;
+}
+
+.label i {
+  color: var(--color-primary);
+  width: 16px;
+}
+
+.input {
+  padding: 0.75rem;
+  border: 2px solid var(--color-border);
+  border-radius: 8px;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(var(--color-primary-rgb), 0.1);
+}
+
+.input::placeholder {
+  color: var(--color-text-secondary);
+}
+
+.input:invalid {
+  border-color: var(--color-error);
+}
+
+.input:valid {
+  border-color: var(--color-success);
+}
+
+.passwordContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.passwordToggle {
+  position: absolute;
+  right: 0.75rem;
+  background: none;
+  border: none;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  padding: 0.25rem;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.passwordToggle:hover {
+  color: var(--color-primary);
+}
+
+.passwordToggle:disabled {
+  color: var(--color-disabled);
+  cursor: not-allowed;
+}
+
+.registerButton {
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.registerButton:hover:not(:disabled) {
+  background: var(--color-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(var(--color-primary-rgb), 0.3);
+}
+
+.registerButton:disabled {
+  background: var(--color-disabled);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.registerButton i {
+  font-size: 1rem;
+}
+
+.registerLink {
+  text-align: center;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.registerLink p {
+  margin: 0;
+  color: var(--color-text-secondary);
+}
+
+.registerLink a {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.registerLink a:hover {
+  color: var(--color-primary-dark);
+  text-decoration: underline;
+}
+
+.required {
+  color: var(--color-error);
+  margin-left: 0.25rem;
+}
+
+@media (max-width: 768px) {
+  .registerBox {
+    padding: 2rem 1.5rem;
+    margin: 1rem;
+  }
+  
+  .logoContainer h1 {
+    font-size: 1.5rem;
+  }
+  
+  .input {
+    padding: 0.625rem;
+  }
+  
+  .registerButton {
+    padding: 0.875rem;
+    font-size: 1rem;
+  }
+  
+  .imageControls {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .uploadButton,
+  .removeButton {
+    width: 100%;
+    justify-content: center;
+  }
+}
